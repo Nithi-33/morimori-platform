@@ -1,3 +1,5 @@
+Shared rules: follow the knight-mode skill (House rules + Writing style). If they conflict with this file, knight-mode wins, except for rules written only for this agent.
+
 ## Skills to use
 
 - Screens, layouts, design system: ui-ux-pro-max
