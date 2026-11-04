@@ -103,6 +103,7 @@ At 10 baht per child, a school with 100 children would pay 1,000 baht a month, w
 
 ## Phases
 
+- **Phase 0 – Scope & Sequence 6-12 for teachers (from the 4 Nov 2026 handover):** host the existing Thai work-card site (`ss-6-12/index.html` + `ss_ver2_images/`, about 6,900 files, 250 MB) as static files on Cloudflare, behind a login, teachers only, never public (AMI album content). Already has noindex and robots.txt. No student data, so it is a safe first item. The files stay out of git; they are deployed from Knight's computer. The 3-6 version can follow later.
 - **Phase 1 – Core + photos (staff only):** schools, classrooms, children, families, staff login; bulk import (create a classroom, upload an Excel / Google Sheet / CSV of children and parents, check a preview that flags errors, then import; a ready-made template is provided); attendance by tapping photos; fast photo posting with work and child suggestions; AMI 3-6 lesson tracking (presented / practising / mastered); consent flags; audit log. Parents see nothing yet.
 - **Phase 2 – Parents (replaces Seesaw):** parent login; announcements and direct messages; parents see their own child's photos (with consent rules); bilingual progress reports (PDF or Word).
 - **Phase 3 – Toddler and 6-12:** toddler and 6-12 lesson lists; move old records from Transparent Classroom (check what its export gives); stop using Transparent Classroom after a full term without problems.
@@ -121,6 +122,8 @@ At 10 baht per child, a school with 100 children would pay 1,000 baht a month, w
 
 **Trading bot fixed IP:** not on this platform. The trading bot gets its own small server with a fixed IP (for example AWS Lightsail with a static IP, about $5 a month), in a separate project. The school app and the trading bot must never share a server: if one is broken into, the other must stay safe.
 
+**4 Nov 2026 handover:** Knight planned to rent a new host (VPS or managed platform). With the Cloudflare choice, there is no server to rent: the WordPress site stays on its current host (looked after by Basketzip), and the platform runs on Cloudflare on a subdomain. The domain is registered with Hostneverdie; check that its DNS is managed on Cloudflare (dashboard.morimorimontessori.com suggests it is). Children's data never goes on the WordPress server.
+
 ## Stack
 
 - **App:** its own Cloudflare Worker on its own subdomain; installable web app for phones.
@@ -138,7 +141,10 @@ At 10 baht per child, a school with 100 children would pay 1,000 baht a month, w
 
 ## Still open
 
-1. Student list: is it in Excel or Google Sheets, and which columns?
+1. Student list: Knight has a Transparent Classroom export (CSV, private, kept on his computer, never in git, chat or email). Needed: the column names only, to build the import.
+1b. Subdomain: `app.morimorimontessori.com` proposed for both the teacher tools and the platform.
+1c. Scope & Sequence login: one shared password (Knight's choice; never written in this repo) or each teacher's own email with a one-time code (recommended, free up to 50 users).
+1d. The "other new function on the website": not described yet.
 2. Repo: Knight to confirm in this chat so the plan can be saved to Nithi-33/morimori-platform.
 3. Knight to approve this plan as final.
 
