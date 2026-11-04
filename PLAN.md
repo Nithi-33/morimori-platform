@@ -1,7 +1,6 @@
-# Mori Mori Montessori school platform: plan
+# GoldenBead: Montessori school platform (Mori Mori Montessori first)
 
-> **DRAFT v2 – Knight answered the 8 questions on 28 Oct 2026. A few follow-up questions are still open (see the end).**
-> No app code until Knight approves the final plan.
+> **APPROVED 4 Nov 2026** by Knight. Product name: **GoldenBead** (domain goldenbead.app, which Knight buys himself). Phase 0 starts now; later phases still need Knight's OK on the details marked open below.
 
 ## Goal
 
@@ -147,7 +146,7 @@ At 10 baht per child, a school with 100 children would pay 1,000 baht a month, w
 ## Still open
 
 1. Student list: Knight has a Transparent Classroom export (CSV, private, kept on his computer, never in git, chat or email). Needed: the column names only, to build the import.
-1b. Product name: not chosen yet (all schools interested are fully Montessori, so a Montessori name is fine).
+1b. Product name: **GoldenBead**, domain goldenbead.app. goldenbead.com is parked for sale on Afternic; maybe later.
 
 Decided 4 Nov 2026: subdomain `app.morimorimontessori.com`; Scope & Sequence uses one shared password first (never written in this repo); move to the product's own domain when a second school joins.
 2. Repo: Knight to confirm in this chat so the plan can be saved to Nithi-33/morimori-platform.
