@@ -108,6 +108,11 @@ At 10 baht per child, a school with 100 children would pay 1,000 baht a month, w
 - **Phase 2 – Parents (replaces Seesaw):** parent login; announcements and direct messages; parents see their own child's photos (with consent rules); bilingual progress reports (PDF or Word).
 - **Phase 3 – Toddler and 6-12:** toddler and 6-12 lesson lists; move old records from Transparent Classroom (check what its export gives); stop using Transparent Classroom after a full term without problems.
 - **Phase 3b – Fees and face check-in:** fee list per child per term, PromptPay QR on the bill, mark as paid, reminder to unpaid families, a list of who has not paid (simple receipts, not tax invoices); face-scan terminal at the gate with opt-in consent.
+- **New functions asked for on 4 Nov 2026:**
+  - **School income and costs (admin only):** record money in and money out by category, monthly summary, export for the accountant. Goes with the fee tracking in Phase 3b.
+  - **Modern, friendly student reports:** part of Phase 2 reports.
+  - **Easy recording of new work presented:** part of Phase 1 lesson tracking (few taps, from the phone).
+  - **Self check-in page for children:** a tablet at the entrance where each child taps their own photo (Phase 1). Face scan comes later with the separate consent form (Phase 3b).
 - **Phase 4 – Other schools:** schools interested so far include Bamboo School, Mami Playhouse, a Khon Kaen international school and others (names to confirm). Start with one pilot school; onboarding, school agreement, separate-data tests, then the 10-baht billing.
 
 ## Hosting choice (compared 28 Oct 2026, prices to re-check)
@@ -142,9 +147,9 @@ At 10 baht per child, a school with 100 children would pay 1,000 baht a month, w
 ## Still open
 
 1. Student list: Knight has a Transparent Classroom export (CSV, private, kept on his computer, never in git, chat or email). Needed: the column names only, to build the import.
-1b. Subdomain: `app.morimorimontessori.com` proposed for both the teacher tools and the platform.
-1c. Scope & Sequence login: one shared password (Knight's choice; never written in this repo) or each teacher's own email with a one-time code (recommended, free up to 50 users).
-1d. The "other new function on the website": not described yet.
+1b. Product name: not chosen yet (all schools interested are fully Montessori, so a Montessori name is fine).
+
+Decided 4 Nov 2026: subdomain `app.morimorimontessori.com`; Scope & Sequence uses one shared password first (never written in this repo); move to the product's own domain when a second school joins.
 2. Repo: Knight to confirm in this chat so the plan can be saved to Nithi-33/morimori-platform.
 3. Knight to approve this plan as final.
 
