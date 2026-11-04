@@ -152,3 +152,25 @@ test("logout clears the cookie", async () => {
   const res = await worker.fetch(get("/logout"), makeEnv());
   assert.match(res.headers.get("Set-Cookie"), /Max-Age=0/);
 });
+
+test("next=/logout or /login falls back to the home page", async () => {
+  assert.equal(safeNext("/logout"), "/");
+  assert.equal(safeNext("/login?next=/x"), "/");
+});
+
+test("cross-site login without an Origin header is refused", async () => {
+  const res = await worker.fetch(
+    postLogin({ password: "test-password" }, { "Sec-Fetch-Site": "cross-site" }),
+    makeEnv(),
+  );
+  assert.equal(res.status, 403);
+});
+
+test("missing files are not cached", async () => {
+  const env = makeEnv({
+    ASSETS: { fetch: async () => new Response("Not found", { status: 404, headers: { "Content-Type": "image/jpeg" } }) },
+  });
+  const res = await worker.fetch(get("/ss-6-12/missing.jpg", { Cookie: await signedInCookie(env) }), env);
+  assert.equal(res.status, 404);
+  assert.equal(res.headers.get("Cache-Control"), "no-store");
+});

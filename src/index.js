@@ -70,7 +70,8 @@ async function handleLogin(request, env, url) {
 
   // Reject logins posted from another site.
   const origin = request.headers.get("Origin");
-  if (origin && origin !== url.origin) {
+  const crossSite = origin ? origin !== url.origin : request.headers.get("Sec-Fetch-Site") === "cross-site";
+  if (crossSite) {
     return withSecurityHeaders(new Response("Forbidden", { status: 403 }));
   }
 
@@ -124,9 +125,12 @@ export default {
     }
 
     // "private" keeps shared caches from storing teacher-only files. Pages are checked every
-    // time so updates show at once; images may stay in the browser for a day.
+    // time so updates show at once; images may stay in the browser for a day. Errors and
+    // redirects are not kept, so a fixed file shows up after the next deploy.
     const asset = await env.ASSETS.fetch(request);
     const isPage = (asset.headers.get("Content-Type") || "").startsWith("text/html");
-    return withSecurityHeaders(asset, { cache: isPage ? "private, no-cache" : "private, max-age=86400" });
+    let cache = "no-store";
+    if (asset.status === 200) cache = isPage ? "private, no-cache" : "private, max-age=86400";
+    return withSecurityHeaders(asset, { cache });
   },
 };

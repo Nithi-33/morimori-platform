@@ -33,11 +33,11 @@ You need Node.js (LTS) installed once, from nodejs.org.
 2. Copy the Scope & Sequence files in. The five zips unzip to a folder called `ss-6-12`:
    ```
    cd public
-   for f in ~/path/to/website-uploads/ss-6-12-part*.zip; do unzip -o "$f"; done
+   for f in ~/SynologyDrive/Knight/Agents/school/website-uploads/ss-6-12-part*.zip; do unzip -o "$f"; done
    cd ..
    ls public/ss-6-12/index.html
    ```
-   The last line must print the file name. If it says "No such file", stop and tell Claude.
+   If your `website-uploads` folder is somewhere else, change the path in the `for` line (you can drag the folder into Terminal to paste its path). The last line must print the file name. If it says "No such file", stop and tell Claude.
 3. Sign in to Cloudflare (a browser window opens):
    ```
    npx wrangler login

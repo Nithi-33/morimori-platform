@@ -17,14 +17,22 @@ export function isConfigured(env) {
   );
 }
 
+// The imported key is kept per secret, so image requests don't import it again each time.
+const keyCache = new Map();
+
+function hmacKey(secret) {
+  if (!keyCache.has(secret)) {
+    keyCache.clear();
+    keyCache.set(
+      secret,
+      crypto.subtle.importKey("raw", encoder.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]),
+    );
+  }
+  return keyCache.get(secret);
+}
+
 async function hmac(secret, message) {
-  const key = await crypto.subtle.importKey(
-    "raw",
-    encoder.encode(secret),
-    { name: "HMAC", hash: "SHA-256" },
-    false,
-    ["sign"],
-  );
+  const key = await hmacKey(secret);
   return new Uint8Array(await crypto.subtle.sign("HMAC", key, encoder.encode(message)));
 }
 
@@ -95,5 +103,8 @@ export function safeNext(value) {
   if (typeof value !== "string" || !value.startsWith("/")) return "/";
   if (value.startsWith("//") || value.includes("\\")) return "/";
   if (/[\u0000-\u001f]/.test(value)) return "/";
+  // Going back to /login or /logout after signing in would loop.
+  const path = value.split(/[?#]/)[0];
+  if (path === "/login" || path === "/logout") return "/";
   return value;
 }
