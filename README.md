@@ -2,7 +2,7 @@
 
 Montessori school platform, starting at Mori Mori Montessori. The full plan is in [PLAN.md](PLAN.md).
 
-**Phase 0 (now):** Scope & Sequence 6-12 for teachers at `https://app.morimorimontessori.com`, behind one shared password. Runs on Cloudflare Workers. There is no student data in Phase 0.
+**Phase 0 (now):** Scope & Sequence 6-12 for teachers at `https://app.goldenbead.org`, behind one shared password. Runs on Cloudflare Workers. There is no student data in Phase 0.
 
 ## How it works
 
@@ -54,7 +54,7 @@ You need Node.js (LTS) installed once, from nodejs.org.
    ```
    openssl rand -hex 32 | npx wrangler secret put SESSION_SECRET
    ```
-6. Open `https://app.morimorimontessori.com` on your phone, sign in, and check that a few work cards and images open.
+6. Open `https://app.goldenbead.org` on your phone, sign in, and check that a few work cards and images open.
 7. Sign out of Cloudflare on the Mac so no login stays stored there:
    ```
    npx wrangler logout

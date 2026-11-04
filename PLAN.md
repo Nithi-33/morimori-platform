@@ -6,9 +6,9 @@
 
 One bilingual (Thai + English) app for Montessori record keeping, photos, attendance and parent messages. It replaces Transparent Classroom and Seesaw at Mori Mori. Later, other schools can use it too.
 
-Address: `school.morimorimontessori.com` (name to be decided).
+Address: `app.goldenbead.org` (decided 4 Nov 2026). `goldenbead.org` itself is kept for a public page for other schools later.
 
-It shares **nothing except the domain** with `dashboard.morimorimontessori.com` (Dad's trading page): no shared login, keys, database, photo storage, repo or Cloudflare API token. It never goes into the binance-trader repo.
+It shares **nothing** with `dashboard.morimorimontessori.com` (Dad's trading page): no shared login, keys, database, photo storage, repo or Cloudflare API token. It never goes into the binance-trader repo.
 
 ## Knight's answers (28 Oct 2026)
 
@@ -148,7 +148,7 @@ At 10 baht per child, a school with 100 children would pay 1,000 baht a month, w
 1. Student list: Knight has a Transparent Classroom export (CSV, private, kept on his computer, never in git, chat or email). Needed: the column names only, to build the import.
 1b. Product name: **GoldenBead**, domain goldenbead.app. goldenbead.com is parked for sale on Afternic; maybe later.
 
-Decided 4 Nov 2026: subdomain `app.morimorimontessori.com`; Scope & Sequence uses one shared password first (never written in this repo); move to the product's own domain when a second school joins.
+Decided 4 Nov 2026: address `app.goldenbead.org`, in Knight's own Cloudflare account (morimorimontessori.com is in another Cloudflare account Knight does not have, so it is not used). Scope & Sequence uses one shared password first (never written in this repo).
 2. Repo: Knight to confirm in this chat so the plan can be saved to Nithi-33/morimori-platform.
 3. Knight to approve this plan as final.
 

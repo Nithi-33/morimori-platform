@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import worker from "../src/index.js";
 import { COOKIE_NAME, createSessionValue, isValidSession, safeNext } from "../src/auth.js";
 
-const BASE = "https://app.morimorimontessori.com";
+const BASE = "https://app.goldenbead.org";
 
 function makeEnv(overrides = {}) {
   return {
