@@ -1,0 +1,5 @@
+node_modules/
+.wrangler/
+.dev.vars
+# Scope & Sequence content (AMI album material) is deployed from Knight's computer, never committed.
+public/ss-6-12/
