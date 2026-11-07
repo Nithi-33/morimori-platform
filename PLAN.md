@@ -52,6 +52,12 @@ Knight wants face check-in: it is now common in Thai schools, and parents get a 
 
 Transparent Classroom downloads land in Files on iPhone, not in Photos. Fix: parents tick the photos they want and tap "Save to phone". This opens the phone's share sheet, then "Save Images" puts them in Photos (iPhone) or Gallery (Android). Two taps; a website can't save straight into Photos without the share sheet.
 
+### Parent and staff phone app (asked 7 Nov 2026)
+
+An installable web app in the style of a university app: school news, today's weather and air quality, pickup QR card, calendar, meeting booking, reports, messages and fee payment. No points, leaderboards or prizes (against Montessori's focus on the child's own motivation).
+
+**Air quality from the school's own monitors:** the indoor and outdoor IQAir monitors at Mori Mori (shown in IQAir as "Mori Mori Montessori") give a private device API link from the IQAir dashboard. The link is stored as a Cloudflare secret, never in git or chat. The app reads it about every 10 minutes and shows indoor and outdoor AQI / PM2.5 on the home screen, with a simple guide for outdoor play, and alerts teachers when outdoor air is unhealthy. To check: who owns the outdoor station (IQAir lists it as from "Dr.Yothi").
+
 ### Messages (replaces Seesaw)
 
 - Announcements to the whole school, one classroom, or chosen families.
