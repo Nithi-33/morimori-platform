@@ -174,3 +174,14 @@ test("missing files are not cached", async () => {
   assert.equal(res.status, 404);
   assert.equal(res.headers.get("Cache-Control"), "no-store");
 });
+
+test("plain http is sent to https", async () => {
+  const res = await worker.fetch(new Request("http://app.goldenbead.org/ss-6-12/"), makeEnv());
+  assert.equal(res.status, 301);
+  assert.equal(res.headers.get("Location"), "https://app.goldenbead.org/ss-6-12/");
+});
+
+test("referrer policy keeps the Origin header on the login form", async () => {
+  const res = await worker.fetch(get("/login"), makeEnv());
+  assert.equal(res.headers.get("Referrer-Policy"), "same-origin");
+});

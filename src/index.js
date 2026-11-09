@@ -28,7 +28,8 @@ function withSecurityHeaders(response, { cache = "no-store" } = {}) {
   const res = new Response(response.body, response);
   res.headers.set("X-Robots-Tag", "noindex, nofollow");
   res.headers.set("X-Content-Type-Options", "nosniff");
-  res.headers.set("Referrer-Policy", "no-referrer");
+  // "same-origin": with "no-referrer" browsers send "Origin: null" on the login form, which was refused.
+  res.headers.set("Referrer-Policy", "same-origin");
   res.headers.set("X-Frame-Options", "SAMEORIGIN");
   res.headers.set("Strict-Transport-Security", "max-age=31536000");
   res.headers.set("Cache-Control", cache);
@@ -96,6 +97,12 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname;
+
+    // The login cookie only works over HTTPS, so send plain-HTTP visits (e.g. links from chat apps) there first.
+    if (url.protocol === "http:" && url.hostname !== "localhost" && url.hostname !== "127.0.0.1") {
+      url.protocol = "https:";
+      return Response.redirect(url.toString(), 301);
+    }
 
     if (path === "/robots.txt") {
       return withSecurityHeaders(await env.ASSETS.fetch(request), { cache: "public, max-age=86400" });
