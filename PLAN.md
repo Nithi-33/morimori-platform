@@ -91,7 +91,7 @@ Mock-up: claude.ai design canvas "Mori Mori parent app mock-up" (private to Knig
 - **Teacher attendance:** A1 tap photos, A3 parents report absence ahead, A4 monthly summary/export.
 - **Lessons:** P1 child × lesson grid, P2 record for a group, P3 next-week plan with AMI sequence, P4 observations.
 - **Admin money:** B1 month summary, B2 photo of receipt, B3 monthly chart, B4 unpaid list with reminders.
-- **Pickup:** teacher taps the child's photo, then the adult's photo from the authorised list (K4); QR card as backup when the teacher does not know the adult or for a one-day pickup. No video. A still photo of the adult at pickup is taken and **deleted automatically after 7 days**; only admin can see it; stated in the privacy notice and pickup consent form. Gate CCTV, if used, is separate.
+- **Pickup (decided 10 Nov 2026):** a tablet at the door. The adult taps the child's photo (or scans their QR), taps their own photo from the authorised list, and the tablet's front camera takes one still photo with a visible "taking a confirmation photo" notice. The teacher's phone gets "Pim is being picked up by Grandma" and releases the child. Photo deleted automatically after 7 days, admin-only, stated in the privacy notice and pickup consent form. No video. The same tablet does morning check-in (S1 tap own photo, S3 feeling).
 
 ## Children's data (PDPA)
 
