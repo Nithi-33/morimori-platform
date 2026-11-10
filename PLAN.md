@@ -71,6 +71,28 @@ An installable web app in the style of a university app: school news, today's we
 - When another school uses it, that school owns its data (data controller) and Knight's platform processes it for them (data processor). A short data processing agreement is needed with each school (have the PDPA lawyer check it once).
 - One school must never see another school's data. This gets tested before the second school joins.
 
+## App design decisions (Knight, 10 Nov 2026)
+
+Mock-up: claude.ai design canvas "Mori Mori parent app mock-up" (private to Knight). Sample data only; no real children's data in mock-ups.
+
+- **Look:** Mori Mori school colours from the logo, pastel; headings dark purple (#454B98); font Kanit; school logo in the header; no "GoldenBead" text in the parent app. Thai on screen.
+- **Home:** orange header + white sheet (layout 10) with Instagram-style circles (layout 3), news banner, 4 shortcuts, indoor/outdoor air. Fees are not on Home; they sit in the "ลูก" page.
+- **Workflow rule:** before building each screen, show 4–5 researched examples and let Knight choose.
+- **Photos:** P1 feed + P2 grid by day with multi-select "save to phone" + P4 growth timeline + P5 "today" stories.
+- **Calendar:** C1 list + C2 month grid + C4 term view that also shows the child's attendance days.
+- **Messages:** M1 threads + M2 topics + M3 announcements with reply buttons. No group chat. Parents message the office (ธุรการ) only, not teachers directly.
+- **Progress:** like Transparent Classroom (lesson list per area with status and dates).
+- **Overall report:** shown at the end of term only.
+- **Lunch (ปิ่นโต):** L1 weekly menu.
+- **Meetings:** T1 pick a time slot + T4 online option.
+- **Fees:** F1 amount + PromptPay QR, F2 line items, F4 attach transfer slip.
+- **Child check-in tablet:** S1 tap own photo, S3 choose today's feeling, S4 face scan later (separate consent).
+- **Teacher photo posting:** U3 shoot now, tag later + U4 voice caption.
+- **Teacher attendance:** A1 tap photos, A3 parents report absence ahead, A4 monthly summary/export.
+- **Lessons:** P1 child × lesson grid, P2 record for a group, P3 next-week plan with AMI sequence, P4 observations.
+- **Admin money:** B1 month summary, B2 photo of receipt, B3 monthly chart, B4 unpaid list with reminders.
+- **Pickup:** open question (QR vs teacher tapping the child's photo; video at pickup).
+
 ## Children's data (PDPA)
 
 Not legal advice. A Thai PDPA lawyer should check the final consent form, privacy notice and the school agreement once.
